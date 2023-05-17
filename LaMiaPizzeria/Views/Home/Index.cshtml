@@ -1,5 +1,5 @@
-﻿@{
- }
+﻿@model List<PizzaModel>;
+
  <div class="container-fluid text-start m-5">
      <div class="row">
          <div class="col-6">
@@ -11,19 +11,20 @@
          </div>
      </div>
  </div>
+ @foreach (PizzaModel pizza in Model) {
  <div class="container justify-content-around">
      <div class="row">
          <div class="col-md-6">
              <div class="card mb-3" style="max-width: 540px; background-color:#FAEBD7">
                  <div class="row g-0">
                      <div class="col-md-4">
-                         <img src="~/img/marghe.jpeg" class="img-fluid rounded-start" alt="...">
+                         <img src="@pizza.ImgSource" class="img-fluid rounded-start" alt="...">
                      </div>
                          <div class="col-md-8">
                              <div class="card-body">
-                                 <h5 class="card-title">Margherita</h5>
-                                 <p class="card-text">Classica e insuperabile, con pomodoro, mozzarella e basilico.</p>
-                                 <span class="card-text"><small class="text-body-secondary">4.50 €</small></span>
+                                 <h5 class="card-title">@pizza.Name</h5>
+                                 <p class="card-text">@pizza.Description</p>
+                                 <span class="card-text"><small class="text-body-secondary">@pizza.Price.ToString("0.00") €</small></span>
                                  <button type="button" class="btn btn-secondary btn-sm p-1">Comprami!</button>
                              </div>
                          </div>
@@ -34,13 +35,13 @@
              <div class="card mb-3" style="max-width: 540px; background-color:#FAEBD7">
                  <div class="row g-0">
                      <div class="col-md-4">
-                         <img src="~/img/mushroom.jpeg" class="img-fluid rounded-start" alt="...">
+                            <img src="@pizza.ImgSource" class="img-fluid rounded-start" alt="...">
                      </div>
                          <div class="col-md-8">
                              <div class="card-body">
-                                  <h5 class="card-title">Funghi</h5>
-                                  <p class="card-text">Sfiziosa pizza con pomodoro, mozzarella e funghi.</p>
-                                  <span class="card-text"><small class="text-body-secondary">5.50 €</small></span>
+                                <h5 class="card-title">@pizza.Name</h5>
+                                <p class="card-text">@pizza.Description</p>
+                                <span class="card-text"><small class="text-body-secondary">@pizza.Price.ToString("0.00") €</small></span>
                                   <button type="button" class="btn btn-secondary btn-sm p-1">Comprami!</button>
                              </div>
                          </div>
@@ -51,13 +52,13 @@
              <div class="card mb-3" style="max-width: 540px; background-color:#FAEBD7">
                  <div class="row g-0">
                      <div class="col-md-4">
-                         <img src="~/img/gamberetti.jpeg" class="img-fluid rounded-start" alt="...">
+                            <img src="@pizza.ImgSource" class="img-fluid rounded-start" alt="...">
                      </div>
                          <div class="col-md-8">
                              <div class="card-body">
-                                  <h5 class="card-title">Gamberetti</h5>
-                                  <p class="card-text">Squisita pizza con pomodoro, mozzarella e gamberetti.</p>
-                                  <span class="card-text"><small class="text-body-secondary">6.50 €</small></span>
+                                <h5 class="card-title">@pizza.Name</h5>
+                                <p class="card-text">@pizza.Description</p>
+                                <span class="card-text"><small class="text-body-secondary">@pizza.Price.ToString("0.00") €</small></span>
                                   <button type="button" class="btn btn-secondary btn-sm p-1">Comprami!</button>
                              </div>
                          </div>
@@ -68,13 +69,13 @@
              <div class="card mb-3" style="max-width: 540px; background-color:#FAEBD7">
                  <div class="row g-0">
                      <div class="col-md-4">
-                          <img src="~/img/salamino.jpeg" class="img-fluid rounded-start" alt="...">
+                            <img src="@pizza.ImgSource" class="img-fluid rounded-start" alt="...">
                      </div>
                          <div class="col-md-8">
                              <div class="card-body">
-                                 <h5 class="card-title">Salamino</h5>
-                                 <p class="card-text">Piccantissima pizza con pomodoro, mozzarella e salamino.</p>
-                                 <span class="card-text"><small class="text-body-secondary">5.50 €</small></span>
+                                <h5 class="card-title">@pizza.Name</h5>
+                                <p class="card-text">@pizza.Description</p>
+                                <span class="card-text"><small class="text-body-secondary">@pizza.Price.ToString("0.00") €</small></span>
                                  <button type="button" class="btn btn-secondary btn-sm p-1">Comprami!</button>
                              </div>
                          </div>
@@ -84,3 +85,4 @@
      </div>
  </div>
     
+}
