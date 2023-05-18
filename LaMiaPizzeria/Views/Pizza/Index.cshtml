@@ -11,79 +11,31 @@
         </div>
     </div>
 </div>
-@foreach (PizzaModel pizza in Model)
-{
-    <div class="container justify-content-around">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card mb-3" style="max-width: 540px; background-color:#FAEBD7">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="@pizza.ImgSource" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">@pizza.Name</h5>
-                                <p class="card-text">@pizza.Description</p>
-                                <span class="card-text"><small class="text-body-secondary">@pizza.Price.ToString("0.00") €</small></span>
-                                <button type="button" class="btn btn-secondary btn-sm p-1">Comprami!</button>
-                            </div>
-                        </div>
+
+<div class="container justify-content-around">
+    <div class="row">
+
+@{
+    foreach (PizzaModel pizza in Model)
+    {
+        <div class="col-md-6">
+            <div class="card mb-3" style="max-width: 540px; background-color:#FAEBD7">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="@pizza.ImgSource" class="img-fluid rounded-start" alt="...">
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mb-3" style="max-width: 540px; background-color:#FAEBD7">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="@pizza.ImgSource" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">@pizza.Name</h5>
-                                <p class="card-text">@pizza.Description</p>
-                                <span class="card-text"><small class="text-body-secondary">@pizza.Price.ToString("0.00") €</small></span>
-                                <button type="button" class="btn btn-secondary btn-sm p-1">Comprami!</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mb-3" style="max-width: 540px; background-color:#FAEBD7">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="@pizza.ImgSource" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">@pizza.Name</h5>
-                                <p class="card-text">@pizza.Description</p>
-                                <span class="card-text"><small class="text-body-secondary">@pizza.Price.ToString("0.00") €</small></span>
-                                <button type="button" class="btn btn-secondary btn-sm p-1">Comprami!</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mb-3" style="max-width: 540px; background-color:#FAEBD7">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="@pizza.ImgSource" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">@pizza.Name</h5>
-                                <p class="card-text">@pizza.Description</p>
-                                <span class="card-text"><small class="text-body-secondary">@pizza.Price.ToString("0.00") €</small></span>
-                                <button type="button" class="btn btn-secondary btn-sm p-1">Comprami!</button>
-                            </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">@pizza.Name</h5>
+                            <p class="card-text">@pizza.Description</p>
+                            <span class="card-text"><small class="text-body-secondary">@pizza.Price.ToString() €</small></span>
+                            <button type="button" class="btn btn-secondary btn-sm p-1">Comprami!</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    }
 }
+    </div>
+</div>
