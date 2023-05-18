@@ -25,7 +25,7 @@ namespace la_mia_pizzeria_static.Controllers
             return View("Contacts");
         }
 
-        public IActionResult FindPizzas(string titleKeyword)
+        public IActionResult SearchPizza(string titleKeyword)
         {
             using (PizzaContext db = new())
             {
