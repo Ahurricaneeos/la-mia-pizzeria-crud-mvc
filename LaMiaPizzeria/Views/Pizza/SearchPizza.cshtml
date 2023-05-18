@@ -1,0 +1,10 @@
+﻿@model List<PizzaModel>
+
+<ol>
+
+    @foreach (PizzaModel pizza in Model)
+    {
+        <li>@pizza.Name - @pizza.Description</li>
+    }
+
+</ol>
