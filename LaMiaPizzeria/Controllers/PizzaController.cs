@@ -25,6 +25,11 @@ namespace la_mia_pizzeria_static.Controllers
             return View("Contacts");
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         public IActionResult PizzaDetails(int id)
         {
             using (PizzaContext db = new())
