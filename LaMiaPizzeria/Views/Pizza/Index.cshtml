@@ -29,7 +29,7 @@
                             <h5 class="card-title">@pizza.Name</h5>
                             <p class="card-text">@pizza.Description</p>
                             <span class="card-text"><small class="text-body-secondary">@pizza.Price.ToString() €</small></span>
-                            <button type="button" class="btn btn-secondary btn-sm p-1" href="@Url.Action("SearchPizza", "Pizza", new {id = pizza.Id})">Comprami!</button>
+                            <a href="@Url.Action("PizzaDetails", "Pizza", new {id = pizza.Id})" type="button" class="btn btn-secondary btn-sm p-1">Comprami!</a>
                                     
                         </div>
                     </div>

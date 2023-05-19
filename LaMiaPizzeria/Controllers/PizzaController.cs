@@ -25,12 +25,22 @@ namespace la_mia_pizzeria_static.Controllers
             return View("Contacts");
         }
 
-        public IActionResult SearchPizza(int id)
+        public IActionResult PizzaDetails(int id)
         {
             using (PizzaContext db = new())
             {
                 PizzaModel matchPizza = db.Pizzas.Where(pizze => pizze.Id == id).First();
-                return View(matchPizza);
+                return View("PizzaDetails", matchPizza);
+            }
+        }
+
+        public IActionResult SearchPizza(string titleKeyword)
+        {
+            using (PizzaContext db = new())
+            {
+                PizzaModel matchedPizza = db.Pizzas.Where(pizze => pizze.Name.Contains(titleKeyword)).First();
+                ViewData["titleKeyword"] = titleKeyword;
+                return View(matchedPizza);
             }
         }
     }
