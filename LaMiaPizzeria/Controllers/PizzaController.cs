@@ -25,27 +25,29 @@ namespace la_mia_pizzeria_static.Controllers
             return View("Contacts");
         }
 
-        public IActionResult Create()
+        public IActionResult AddPizza()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(PizzaModel newPizza)
+        public IActionResult AddPizza(PizzaModel newPizza)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                return View("Create", newPizza);
+                return View(newPizza);
             }
+            else
+            {
+                using (PizzaContext db = new PizzaContext())
+                {
+                    db.Pizzas.Add(newPizza);
+                    db.SaveChanges();
 
-            using (PizzaContext db = new())
-            {
-                PizzaModel pizzaToCreate = new PizzaModel(newPizza.Name, newPizza.Description, newPizza.ImgSource, newPizza.Price);
-                db.Pizzas.Add(pizzaToCreate);
-                db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-            return RedirectToAction("Index");
         }
         public IActionResult PizzaDetails(int id)
         {

@@ -2,8 +2,8 @@
 
 <div class="container">
     <h2 class="mb-3">Crea la tua pizza!</h2>
-    <form asp-controller="PizzaModel" asp-action="Create">
-        @Html.AntiForgeryToken();
+    <form asp-controller="Pizza" asp-action="AddPizza" method="post">
+        @Html.AntiForgeryToken()
         <div class="mb-3">
             <label class="form-label">Nome Pizza</label>
             <input asp-for="Name" type="text" class="form-control">
@@ -22,3 +22,4 @@
         </div>
         <button type="submit" class="btn btn-primary">Crea!</button>
     </form>
+</div>
