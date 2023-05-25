@@ -19,7 +19,7 @@ namespace la_mia_pizzeria_static.Controllers
             using (PizzaContext db = new())
             {
                 List<PizzaModel> pizze = db.Pizzas.ToList();
-                return View("Index");
+                return RedirectToAction("Index", "Pizza");
             }
         }
 
