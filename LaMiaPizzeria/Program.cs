@@ -3,18 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using la_mia_pizzeria_static.Database;
 var builder = WebApplication.CreateBuilder(args);
 
-
-builder.Services.AddDbContext<PizzaContext>();
-
-//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-//    .AddEntityFrameworkStores<PizzaContext>();
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-.AddRoles<IdentityRole>()
-.AddEntityFrameworkStores<PizzaContext>();
 
 var app = builder.Build();
 
@@ -39,5 +29,4 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Pizza}/{action=Index}/{id?}");
 
-app.MapRazorPages();
 app.Run();

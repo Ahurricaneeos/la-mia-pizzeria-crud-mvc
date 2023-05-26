@@ -12,8 +12,8 @@ using la_mia_pizzeria_static.Database;
 namespace la_mia_pizzeria_static.Migrations
 {
     [DbContext(typeof(PizzaContext))]
-    [Migration("20230522123542_CreateIdentityTables")]
-    partial class CreateIdentityTables
+    [Migration("20230526161309_UpdateEntityAddPizzaCategory")]
+    partial class UpdateEntityAddPizzaCategory
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
