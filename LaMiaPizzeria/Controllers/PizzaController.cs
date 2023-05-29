@@ -2,6 +2,7 @@
 using la_mia_pizzeria_static.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 
 namespace la_mia_pizzeria_static.Controllers
@@ -57,7 +58,7 @@ namespace la_mia_pizzeria_static.Controllers
         {
             using (PizzaContext db = new())
             {
-                PizzaModel matchPizza = db.Pizzas.Where(pizze => pizze.Id == id).First();
+                PizzaModel matchPizza = db.Pizzas.Where(pizze => pizze.Id == id).Include(pizze => pizze.Category).First();
                 return View("PizzaDetails", matchPizza);
             }
         }

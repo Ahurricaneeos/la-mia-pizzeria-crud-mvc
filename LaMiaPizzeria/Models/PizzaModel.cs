@@ -13,6 +13,8 @@ namespace la_mia_pizzeria_static.Models
         [MaxLength(300)]
         public string ImgSource { get; set; }
         public float Price { get; set;}
+        public int? PizzaCategoryId { get; set; }
+        public PizzaCategory? Category { get; set; }
 
         public PizzaModel(string name, string description, string imgSource, float price)
         {
